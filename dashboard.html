@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Premium Todo App</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <div class="dashboard-page">
+        <header class="header">
+            <div class="logo">
+                <h1>TaskMaster</h1>
+            </div>
+            <div class="user-info">
+                <span class="user-email" id="userDisplayName">user@example.com</span>
+                <button id="logoutBtn" class="logout-btn">Logout</button>
+            </div>
+        </header>
+
+        <main class="todo-main">
+            <!-- Task Creation Section -->
+            <section class="todo-form-card">
+                <h2>Create New Task</h2>
+                <p class="subtitle" style="text-align: left; margin-bottom: 20px;">Stay on top of your goals</p>
+
+                <form id="todoForm">
+                    <div class="input-group">
+                        <label for="todoTitle">Task Title</label>
+                        <input type="text" id="todoTitle" placeholder="What needs to be done?" required>
+                    </div>
+
+                    <div class="input-group">
+                        <label for="todoDesc">Description (Optional)</label>
+                        <textarea id="todoDesc" rows="3" placeholder="Add some details..."></textarea>
+                    </div>
+
+                    <button type="submit">Add Task</button>
+                </form>
+            </section>
+
+            <!-- Task List Section -->
+            <section class="todo-list-container">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                    <h2>Your Tasks</h2>
+                </div>
+
+                <div id="todoList">
+                    <!-- Tasks will be injected here -->
+                    <div class="empty-state">
+                        <h3>Loading your tasks...</h3>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Scripts -->
+    <script src="js/storage.js"></script>
+    <script>checkAuth(true);</script>
+    <script src="js/auth.js"></script>
+    <script src="js/dashboard.js"></script>
+</body>
+
+</html>
